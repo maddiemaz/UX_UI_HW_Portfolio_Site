@@ -15,7 +15,13 @@ h3 {
     text-align: center;
 }
 
-/* Selectors */
+h4 {
+    text-align: center;
+}
+
+
+
+/* Header */
 .inline-block {
     display: inline-block;
     vertical-align: top;
@@ -37,11 +43,15 @@ ul {
     margin-left: auto;
 }
 
+
+/* Hero Section */
 .HeroImg {
     height: 60px;
     margin: 0 auto;
 }
 
+
+/* Footer */
 footer {
     background-color: black;
     padding: center;
@@ -53,6 +63,8 @@ ul footer {
     padding: center;
 }
 
+
+/* About Section */
 .flexContainer {
     display: flex;
     flex-direction: row;
@@ -60,10 +72,64 @@ ul footer {
 
 .flexChild {
     width: 33%;
-    margin: 20%;
-    padding: 20%;
+    margin: 5%;
+    padding: 5%;
 }
 
+
+/* Work Section */
 .workGrid {
+    margin: 5%;
     display: grid;
+    grid-template-rows: 1/3 1/3 1/3;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'projectImage1 projectImage2 projectImage3'
+    'projectText1 projectText2 projectText3';
+}
+
+
+.imgProject1 {
+    grid-area: projectImage1;
+}
+.imgProject2 {
+    grid-area: projectImage2;
+}
+.imgProject3 {
+    grid-area: projectImage3;
+}
+
+.textProject1 {
+    grid-area: projectText1;
+}
+.textProject2 {
+    grid-area: projectText2;
+}
+.textProject3 {
+    grid-area: projectText3;
+}
+
+
+/* Mobile Media Query */
+@media only screen and (max-width: 600px) {
+    .flexContainer {
+        flex-direction: row;
+    }
+
+    .flexChild {
+        width: 100%;
+    }
+
+    .workGrid {
+        grid-template-rows: 300px 300px 300px 300px 300px 300px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'projectImage1'
+        'projectText1'
+        'projectImage2'
+        'projectText2'
+        'projectImage3'
+        'projectText3'
+        ;
+    }
 }
